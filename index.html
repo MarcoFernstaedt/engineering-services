@@ -3,121 +3,172 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Marco Fernstaedt — fixed-price engineering, automation and security work</title>
-<meta name="description" content="Fixed-price engineering work: spreadsheet-to-app builds, integrations and data cleanup, SaaS admin automation, deployment rescues, and security health checks. Written scope, 50% up front, delivery in 1–3 weeks.">
+<title>Marco Fernstaedt — software engineering, integrations and automation</title>
+<meta name="description" content="Fixed-price software engineering for small businesses: internal tools, integrations, data cleanup, deployment work and security reviews. Written scope, fixed price, delivery in one to three weeks.">
 <style>
-  :root { --bg:#0b0d10; --panel:#14181d; --ink:#e9edf2; --dim:#9aa5b1; --line:#232a32; --accent:#5b9dff; }
+  :root { --bg:#0a0c0f; --panel:#12161b; --panel2:#161b21; --ink:#eef2f7; --dim:#98a3b0; --line:#222932; --accent:#6ea8fe; --ok:#57d38c; }
   * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
   body { margin:0; background:var(--bg); color:var(--ink);
-         font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
-  .wrap { max-width:880px; margin:0 auto; padding:3rem 1.25rem 5rem; }
-  h1 { font-size:clamp(1.6rem,4vw,2.4rem); line-height:1.2; margin:0 0 .75rem; letter-spacing:-.01em; }
-  h2 { font-size:1.15rem; margin:3rem 0 1rem; letter-spacing:.02em; text-transform:uppercase; color:var(--dim); }
+         font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+         -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:900px; margin:0 auto; padding:4rem 1.4rem 6rem; }
+  header { border-bottom:1px solid var(--line); padding-bottom:2rem; margin-bottom:2.5rem; }
+  .kicker { color:var(--accent); font-size:.8rem; letter-spacing:.14em; text-transform:uppercase; font-weight:650; }
+  h1 { font-size:clamp(1.7rem,4.4vw,2.6rem); line-height:1.15; margin:.9rem 0 1rem; letter-spacing:-.02em; }
+  h2 { font-size:.82rem; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); margin:3.25rem 0 1.1rem; font-weight:650; }
+  h3 { font-size:1.02rem; margin:0 0 .4rem; }
   p { margin:0 0 1rem; }
-  .lede { font-size:1.1rem; color:var(--dim); max-width:62ch; }
-  .grid { display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); }
-  .card { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:1.25rem; }
-  .card h3 { margin:0 0 .35rem; font-size:1.05rem; }
-  .price { color:var(--accent); font-weight:600; margin:.25rem 0 .6rem; }
-  ul { margin:.5rem 0 0; padding-left:1.1rem; color:var(--dim); }
-  li { margin:.25rem 0; }
-  .how { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:1.25rem 1.5rem; }
-  .cta { display:inline-block; margin-top:.5rem; background:var(--accent); color:#08101c; font-weight:650;
-         text-decoration:none; padding:.8rem 1.3rem; border-radius:10px; }
-  footer { margin-top:3.5rem; padding-top:1.5rem; border-top:1px solid var(--line); color:var(--dim); font-size:.9rem; }
-  code { background:#0f1419; border:1px solid var(--line); border-radius:6px; padding:.1rem .35rem; font-size:.9em; }
+  .lede { font-size:1.13rem; color:#c8d1db; max-width:64ch; }
+  .grid { display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(255px,1fr)); }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:1.2rem 1.25rem; }
+  .price { color:var(--accent); font-weight:650; margin:.2rem 0 .7rem; font-size:.98rem; }
+  ul { margin:.4rem 0 0; padding-left:1.15rem; color:var(--dim); }
+  li { margin:.22rem 0; }
+  .panel { background:var(--panel2); border:1px solid var(--line); border-radius:12px; padding:1.3rem 1.5rem; }
+  .panel p:last-child { margin-bottom:0; }
+  .steps { counter-reset:s; list-style:none; padding:0; margin:0; }
+  .steps li { counter-increment:s; padding-left:2.1rem; position:relative; margin:.75rem 0; color:var(--ink); }
+  .steps li::before { content:counter(s); position:absolute; left:0; top:.05rem; width:1.4rem; height:1.4rem;
+    border-radius:50%; background:#1b2230; border:1px solid var(--line); color:var(--accent);
+    font-size:.78rem; font-weight:700; display:grid; place-items:center; }
+  .work { border-left:2px solid var(--line); padding-left:1.1rem; margin:1.1rem 0; }
+  .work strong { display:block; }
+  .work span { color:var(--dim); }
+  .cta { display:inline-block; margin-top:.4rem; background:var(--accent); color:#07101f; font-weight:650;
+         text-decoration:none; padding:.85rem 1.4rem; border-radius:9px; }
+  .cta:hover { filter:brightness(1.08); }
+  .meta { display:flex; flex-wrap:wrap; gap:.5rem 1.25rem; color:var(--dim); font-size:.9rem; margin-top:1.25rem; }
+  .dot { color:var(--ok); }
+  footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); color:var(--dim); font-size:.88rem; }
+  a { color:var(--accent); }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <h1>Fixed-price engineering work for small businesses.</h1>
-  <p class="lede">Broken deploy, a business running on a spreadsheet, two systems that should talk to each other, a
-  SaaS org nobody has cleaned up in two years, a security review before a client asks for one. Written scope,
-  fixed price, 50% up front, delivered in one to three weeks.</p>
+  <header>
+    <div class="kicker">Marco Fernstaedt · Software Engineering</div>
+    <h1>Internal tools, integrations and automation — fixed price, fixed date.</h1>
+    <p class="lede">Small businesses outgrow their software long before they can justify a hire. I build the
+    missing piece: the tool that replaces the spreadsheet, the glue between two systems that should already
+    talk to each other, the cleanup of a platform nobody has maintained, and the deployment work that stops a
+    rebuild from being the only option.</p>
+    <div class="meta">
+      <span><span class="dot">●</span> Phoenix, Arizona — working across US time zones</span>
+      <span><span class="dot">●</span> A limited number of engagements at a time</span>
+      <span><span class="dot">●</span> Scope and price agreed in writing before work starts</span>
+    </div>
+  </header>
 
-  <h2>What I take on</h2>
+  <h2>Engagements</h2>
   <div class="grid">
     <div class="card">
-      <h3>Spreadsheet chaos → a real app</h3>
-      <div class="price">$750–2,500</div>
+      <h3>Spreadsheet workflow → internal tool</h3>
+      <div class="price">from $1,200</div>
       <ul>
-        <li>Data modelled properly</li>
-        <li>One workflow, done well</li>
-        <li>Sign-in, export, a one-page runbook</li>
+        <li>Data modelled properly, once</li>
+        <li>One workflow built end to end</li>
+        <li>Sign-in, search, export, and a runbook</li>
       </ul>
     </div>
     <div class="card">
-      <h3>Integration + data cleanup</h3>
-      <div class="price">$500–1,500</div>
+      <h3>Integration &amp; data cleanup</h3>
+      <div class="price">from $900</div>
       <ul>
-        <li>API or database integration</li>
-        <li>Duplicate and dirty records normalised</li>
-        <li>Scheduled sync with failure alerts</li>
+        <li>Two systems exchanging data reliably</li>
+        <li>Duplicate and inconsistent records resolved</li>
+        <li>Scheduled sync with failure alerts that reach a person</li>
       </ul>
     </div>
     <div class="card">
-      <h3>SaaS admin cleanup + automation</h3>
-      <div class="price">$500–2,000</div>
+      <h3>Platform cleanup &amp; automation</h3>
+      <div class="price">from $900</div>
       <ul>
-        <li>Audit of what the last admin left behind</li>
-        <li>Two to five automations that remove manual work</li>
-        <li>Before/after numbers, documented</li>
+        <li>Audit of fields, automations and permissions</li>
+        <li>Workflows that remove manual effort every week</li>
+        <li>Before-and-after numbers, documented</li>
       </ul>
     </div>
     <div class="card">
-      <h3>Rescue a broken repo or deploy</h3>
-      <div class="price">$400–1,200</div>
+      <h3>Deployment rescue</h3>
+      <div class="price">from $700</div>
       <ul>
-        <li>Find the fault, restore service</li>
-        <li>Deployment written down so it can't be folklore</li>
-        <li>A smoke test so it fails loudly next time</li>
+        <li>Diagnose, restore service, remove the single point of failure</li>
+        <li>Deployment written down rather than remembered</li>
+        <li>Smoke tests so the next failure is loud, not silent</li>
       </ul>
     </div>
     <div class="card">
-      <h3>Security health check</h3>
-      <div class="price">$600–2,000</div>
+      <h3>Security review</h3>
+      <div class="price">from $900</div>
       <ul>
-        <li>Scoped external and web-app review</li>
-        <li>Plain-English report, fixes prioritised</li>
-        <li>One retest included; written authorisation first</li>
+        <li>Scoped review of an application or exposed service</li>
+        <li>Findings ranked by real risk, in plain English</li>
+        <li>Remediation support and one retest</li>
       </ul>
     </div>
     <div class="card">
-      <h3>Missed-call recovery (monthly)</h3>
-      <div class="price">$300–800/month</div>
+      <h3>Call answering &amp; booking</h3>
+      <div class="price">$300–800 / month</div>
       <ul>
-        <li>Calls you can't answer get answered</li>
-        <li>Caller qualified, job booked, details texted to you</li>
-        <li>Setup $250–500; if it books nothing in a month, that month is free</li>
+        <li>Calls you cannot answer are answered, qualified and booked</li>
+        <li>Job details sent to you immediately</li>
+        <li>Setup $250–500 · no bookings in a month, that month is free</li>
       </ul>
     </div>
   </div>
+  <p style="color:var(--dim); font-size:.95rem; margin-top:1rem">Final price depends on scope. A written quote
+  fixes it, with the exclusions listed explicitly so nothing turns into surprise work.</p>
 
-  <h2>How it works</h2>
-  <div class="how">
-    <p><strong>1.</strong> A short call: what's broken, what it costs you, and whether it's worth fixing.</p>
-    <p><strong>2.</strong> A written scope with a fixed price and a date. No hourly surprises.</p>
-    <p><strong>3.</strong> Half up front, half on handover. You get a runbook, not a mystery.</p>
-    <p><strong>4.</strong> If the scope turns out to be wrong, we stop and re-scope in writing before more work happens.</p>
-    <a class="cta" href="mailto:fernstaedtmarco@gmail.com?subject=Services%20enquiry">Start with a 15-minute call</a>
+  <h2>How an engagement runs</h2>
+  <div class="panel">
+    <ol class="steps">
+      <li>A short call: what is broken, what it costs you, and whether it is worth fixing at all.</li>
+      <li>A written scope, a fixed price, a delivery date, and the exclusions spelled out.</li>
+      <li>Half up front, half on acceptance. You keep the code and a runbook you can read.</li>
+      <li>If the scope turns out to be wrong, work stops and gets re-scoped in writing — not in an invoice.</li>
+    </ol>
   </div>
 
-  <h2>How the work gets done</h2>
-  <p>I run a small engineering operation with an AI assistant doing the heavy lifting on analysis, code, testing and
-  review — every deliverable is tested and reviewed before it reaches you, and I'm the one accountable for it.
-  I'll tell you plainly what's automated and what isn't, because you're buying a working result, not a story
-  about one.</p>
+  <h2>Selected work</h2>
+  <div class="work">
+    <strong>Security review and remediation of a self-hosted service</strong>
+    <span>A scripted review pass found a server banner disclosing the runtime version, a set of missing
+    security headers, and a secret compared in non-constant time. All were fixed and re-verified against the
+    running service, then written up so the same class of defect could be caught by anyone on the team.</span>
+  </div>
+  <div class="work">
+    <strong>24/7 automation platform, built and operated</strong>
+    <span>A multi-service environment that runs scheduled work, verifies its own changes after every restart,
+    reports failures rather than hiding them, and documents the recovery path — designed to be operated by one
+    person without it becoming a second job.</span>
+  </div>
+  <div class="work">
+    <strong>Repeatable deployment pipeline for a live game server</strong>
+    <span>Scripted, version-controlled deployment of custom server logic onto a production instance, with a
+    staging path so changes are proven before players see them.</span>
+  </div>
 
-  <h2>Who's doing this</h2>
-  <p>Marco Fernstaedt — Tier 2 support specialist by day, and a builder of automation, integrations and internal
-  tools. Recent work includes a Windows estate management tool used by a support team, a browser extension
-  assistant, and hardening a self-hosted service after finding real defects in it with an automated test pass.</p>
+  <h2>Background</h2>
+  <p>I work across Windows, Linux and the web — internal tools, integrations, deployment and support
+  automation. Most of what I build is software somebody has to run at two in the morning, so it gets tested,
+  documented and handed over with a runbook instead of a phone call. I have spent years on the receiving end
+  of systems that were built and then abandoned, which is why every engagement ends with something the next
+  person can pick up.</p>
+
+  <h2>Start here</h2>
+  <div class="panel">
+    <p>Tell me what is costing you time or money and I will tell you whether it is worth fixing, what it
+    would take, and what it would cost. Fifteen minutes, no obligation.</p>
+    <a class="cta" href="mailto:fernstaedtmarco@gmail.com?subject=Engagement%20enquiry">Request a 15-minute call</a>
+  </div>
 
   <footer>
-    Fixed price · Written scope · Written authorisation before any security testing · No work inside a system you
-    don't have the right to change.
-    <br>Contact: <a href="mailto:fernstaedtmarco@gmail.com" style="color:var(--accent)">fernstaedtmarco@gmail.com</a>
+    Fixed price · Written scope · Written authorisation before any security work · No work inside a system
+    you do not have the right to change.
+    <br>Marco Fernstaedt · Phoenix, Arizona ·
+    <a href="mailto:fernstaedtmarco@gmail.com">fernstaedtmarco@gmail.com</a>
   </footer>
 </div>
 </body>
